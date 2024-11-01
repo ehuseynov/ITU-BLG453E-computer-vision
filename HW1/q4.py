@@ -2,6 +2,8 @@
 import cv2
 import numpy as np
 import tifffile as tiff
+import SimpleITK as sitk
+import matplotlib.pyplot as plt
 
 # Define the first alignment function
 def align_images_first(img1, img2):
@@ -43,10 +45,6 @@ def focus_stack_tif_first(image1_path, image2_path, output_path="focus_stacked_o
     focus_stacked = np.where(mask1 == 1, img1_aligned, img2)
     tiff.imwrite(output_path, focus_stacked)
     print(f"Focus-stacked image saved as {output_path}")
-
-# Example usage for first focus stacking:
-focus_stack_tif_first("Data/bf_7.tif", "Data/bf_5.tif", "focus_stacked_output.tif")
-
 
 
 
@@ -112,11 +110,6 @@ def focus_stack_tif_second(image1_path, image2_path, output_path="focus_stacked_
     tiff.imwrite(output_path, focus_stacked)
     print(f"Focus-stacked image saved as {output_path}")
 
-# Example usage for second focus stacking:
-focus_stack_tif_second("Data/RFP_5.tif", "Data/RFP_7.tif", "focus_stacked_output2.tif")
-
-
-
 
 # Part 3: Define Overlay Function and Execute Overlay
 def overlay_images_with_mask(foreground_path, background_path, output_path="overlay_output.tif"):
@@ -139,4 +132,37 @@ def overlay_images_with_mask(foreground_path, background_path, output_path="over
     print(f"Overlay image saved as {output_path}")
 
 # Final overlay example
+focus_stack_tif_first("Data/bf_7.tif", "Data/bf_5.tif", "focus_stacked_output.tif")
+focus_stack_tif_second("Data/RFP_5.tif", "Data/RFP_7.tif", "focus_stacked_output2.tif")
 overlay_images_with_mask("focus_stacked_output2.tif", "focus_stacked_output.tif", "overlay_output.tif")
+
+
+first = sitk.ReadImage('focus_stacked_output.tif')
+second = sitk.ReadImage('focus_stacked_output2.tif')
+Finalphoto = sitk.ReadImage('overlay_output.tif')
+
+first_np = sitk.GetArrayFromImage(first)
+second_np = sitk.GetArrayFromImage(second)
+final_np = sitk.GetArrayFromImage(Finalphoto)
+
+plt.figure(figsize=(15, 3))
+
+plt.subplot(1, 3, 1)
+plt.title("First part")
+plt.imshow(first_np, cmap='gray')
+plt.axis('off')  # Hide axis numbers
+
+plt.subplot(1, 3, 2)
+plt.title("Second part")
+plt.imshow(second_np, cmap='gray')
+plt.axis('off')  # Hide axis numbers
+
+plt.subplot(1, 3, 3)
+plt.title("Final")
+plt.imshow(final_np, cmap='gray')
+plt.axis('off')  # Hide axis numbers
+
+plt.show()
+
+
+
