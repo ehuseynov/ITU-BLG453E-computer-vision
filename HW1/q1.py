@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 image = sitk.ReadImage('Data/CT.tif')
 image_array = sitk.GetArrayFromImage(image)
 
-
 # Normalizing the image 
 image_normalized = image_array / np.max(image_array)
 
