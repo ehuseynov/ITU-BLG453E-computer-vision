@@ -1,0 +1,75 @@
+
+Radial Distortion: when wide-angel lens used
+	Barrel distortion - sekilin barrel kimi olmagi
+	Pincushion distortion - sekini kunclerden dartilmagi
+
+
+geometric transform: kesme, dondurme
+
+coordinate mapping: scale by factor + rotate by angle
+
+
+forward and backward mapping: (3.14e bax)
+
+
+---------------------------------------------------
+-----------------Transformations-----------------
+
+Linear transformation:
+	2d isleyirsen
+	scaling 
+	rotating
+	shearing (dartmaq)
+	
+
+
+Affine transformation: 
+	3d ileyirsen
+	linear transformation +
+	moving image
+	
+
+Projective transformation:
+	Affine transformation +
+	perspective distortion: (perspektif degisme)
+	
+
+
+Other transformations:
+	Non-rigid transformation:
+		kafasina gore degisme demekdi
+
+
+Image registration:
+	2 ve ya daha coxili birbirine birlestirme
+
+	
+
+
+Polynomial Transformation:
+	Boyut degistirme demek olar
+
+
+Image Warping:
+	sekili control pointler kullanarak degistirme, 
+
+Image Morphing:
+	a image is made by another images base lines
+	(usually used for faces(combining 2 faces and create new one))
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

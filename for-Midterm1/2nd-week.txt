@@ -1,0 +1,70 @@
+convolution -> bi matrixnen sekildeki seyleri carpirsan ve ortadakinin rengini deyisirsen, beleliknen rengleri ferqli olanlar ortaya cixir 
+
+
+quantisation ->  limits the values a pixel can have to a finite set. nece bit olmasi falan
+
+
+HSV -> hue, saturation, value
+	hue-> reng secir -> uz qaradisa
+	saturation->rengin aciqliq derecesini -> qaradisa
+	value ->rengin tundluk derecesini -> normal gorunurse
+
+	V = max(R,G,B)
+	S = (max-min)/max
+	H = neyse bu uzundu
+
+
+CIE-XYZ -> rgbden daha cox reng icerir
+
+
+Point processing of the images:(bunlari iyi ogren)
+	-Brightness and contrast adjustment
+	-Gamma correction
+	-Histogram equalization
+	-Histogram matching
+
+
+Look-up tables: ele bir point pr. ucun cheat sheet kimi
+
+Window-level transormation:	
+	ele bil elinde bir cercive var ve sen foto detallarini ora sigisdirirsanki
+
+
+RGB-de:
+	0, 0, 0 -> qara
+	256, 256, 256 -> ag
+
+
+Contrast streching 
+Contrast increasing
+
+gamma correction -> 
+
+
+Histogram equalization:
+	elebil sekilin cdf histogramini daha duz xett elemeye calisiriq ki, daha dengeli sekil cixsin ortaya
+
+Histogram matching: 
+	bunun koduna baxim bide sey ele
+
+
+Image augmentation:
+	invertion: invert all values(255-V)
+	solarization: tresholddan yuxari olanlari invert ele
+	Multiply Hue: Multiply Hue channel with some value
+	Color quantization: Quantize values according to levels(reng sayini azaldir)
+	Grayscale: (R + G + B)/3
+
+
+
+
+
+
+
+
+
+
+
+
+
+

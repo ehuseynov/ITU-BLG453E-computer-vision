@@ -1,0 +1,78 @@
+--------------------------------------------------
+Noise:
+	random noise: yuksek iso olanda yaranan noise
+
+
+
+NOISE PROBABILITY DENSITY FUNCTIONS:
+	Gaussian: en cox sekili pozan
+	Rayleigh: orta
+	Gamma: az pozan
+
+
+	Exponential: gammaya oxsayir
+	Uniform: gaussiana oxsayir 
+	Salt&pepper: bezi yerleri ag ya da qara eliyir
+
+	Impulse noise: sekili verilen indekse gore deyisir, ne qeder cox olsa o qeder pixel deyisir
+
+
+
+--------------------------------------------------------
+----------------Spatial Filtering----------------
+Averaging (smoothing) filter masks:
+	ya hamisi 1 1 1 olan ya da ferqli bi sekilde olan ortalama bi sey
+
+
+Convolution and Correlation:
+	biri soldan biri sagdan baslayir islemeye yene
+
+Gaussian smoothing:
+	gaus dagilimi ile yaranan matrixi tetbiq ele.
+
+
+median filtering: 
+	3x3 yerdedise, 9 denesini alir, sort eliyir, mediani tapir.
+
+
+arithmetic mean filtering:
+	3x3 yerdedise, hamisini toplayir 9-a bolur.
+
+
+geometric mean filtering:
+	3x3 yerdediser, hamisini birbirine vuru, kok alti 9-a alir.
+	salt&paperi temizlemek ucun pisdi
+
+
+
+Min filter and Max filter:
+	finds darkes or brightest points, 
+
+
+
+More order statistix filters
+
+Midpoint filers
+
+Alpha-trimmed mean filters
+
+
+Adapative filters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
